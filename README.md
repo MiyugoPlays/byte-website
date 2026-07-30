@@ -21,11 +21,9 @@ O projeto será desenvolvido utilizando as seguintes tecnologias:
 * **Bootstrap 5:** Framework para responsividade e componentes visuais de interface.
 
 ## 🌳 Organização do Git
-# Padrão de Branches
-
 Para manter a organização do projeto, cada funcionalidade ou correção deve ser desenvolvida em uma branch separada.
 
-## Convenção de nomes
+### Convenção de nomes
 
 Utilize os seguintes padrões:
 
@@ -34,7 +32,7 @@ Utilize os seguintes padrões:
 - `docs/descricao` – Alterações na documentação.
 - `refactor/descricao` – Refatoração de código sem alterar funcionalidades.
 
-### Exemplos
+#### Exemplos
 
 ```text
 feature/pagina-receitas
@@ -46,7 +44,7 @@ docs/readme
 
 ---
 
-# Merge Requests (MR)
+### Merge Requests (MR)
 
 Nenhuma alteração deve ser enviada diretamente para a branch `main`.
 
@@ -62,7 +60,7 @@ O fluxo de trabalho adotado é:
 
 ---
 
-# Boas práticas
+### Boas práticas
 
 - Criar uma branch para cada tarefa.
 - Fazer commits pequenos e com mensagens descritivas.
@@ -72,7 +70,7 @@ O fluxo de trabalho adotado é:
 
 ---
 
-# Exemplo de fluxo
+### Exemplo de fluxo
 
 ```bash
 git checkout main
