@@ -10,6 +10,22 @@ O **Byte** é um catálogo de receitas desenvolvido com o objetivo de oferecer u
 
 ---
 
+## 🏠 Página Inicial
+
+A página inicial (`index.html`) está dividida em blocos independentes. Para editar o conteúdo:
+
+| O que editar | Onde editar |
+|---|---|
+| Texto do logo e itens de menu | `<header id="cabecalho">` em `index.html` |
+| Título e texto de apresentação | `<section class="hero">` em `index.html` |
+| Receitas do carrossel de destaque | `<section class="destaques">` em `index.html` (cada `.carousel-item` é uma receita) |
+| Links e redes sociais do rodapé | `<footer id="rodape">` em `index.html` |
+| Cores do site (tema claro/escuro) | variáveis `:root` no início de `css/style.css` |
+
+As receitas do carrossel estão fixas como exemplo nesta etapa; a Issue 2 substitui esses itens por dados
+carregados dinamicamente do arquivo JSON. O tema claro/escuro é controlado pelo botão no cabeçalho
+(lógica em `js/app.js`) e a preferência escolhida é salva no navegador do usuário.
+
 ## 🛠️ Tecnologias Utilizadas
 
 O projeto será desenvolvido utilizando as seguintes tecnologias:
