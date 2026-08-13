@@ -26,6 +26,44 @@ As receitas do carrossel estão fixas como exemplo nesta etapa; a Issue 2 substi
 carregados dinamicamente do arquivo JSON. O tema claro/escuro é controlado pelo botão no cabeçalho
 (lógica em `js/app.js`) e a preferência escolhida é salva no navegador do usuário.
 
+## 📄 Página de Detalhes da Receita
+
+A página `receita.html` é um template único reutilizado para todas as receitas. Os dados são lidos em
+tempo de execução a partir de `data/recipes.json` e a receita exibida é definida pelo parâmetro `id` na
+URL, por exemplo: `receita.html?id=lasanha-a-bolonhesa`.
+
+| O que editar | Onde editar |
+|---|---|
+| Estrutura/layout da página de detalhes | `receita.html` |
+| Lógica de leitura do JSON e renderização | `js/receita.js` |
+| Estilos da página de detalhes | Bloco "Página de detalhes da receita" em `css/style.css` |
+| Dados das receitas (adicionar/editar receitas) | `data/recipes.json` |
+
+Formato esperado de cada receita em `data/recipes.json`:
+
+```json
+{
+  "id": "identificador-unico-da-receita",
+  "nome": "Nome da Receita",
+  "categoria": "Categoria",
+  "imagem": "URL da imagem",
+  "tempoPreparo": "90 minutos",
+  "porcoes": 6,
+  "dificuldade": "Fácil | Média | Difícil",
+  "descricao": "Texto curto de apresentação da receita.",
+  "ingredientes": ["Ingrediente 1", "Ingrediente 2"],
+  "modoPreparo": ["Passo 1", "Passo 2"],
+  "dicaDoChef": "Dica opcional exibida em destaque no final da página."
+}
+```
+
+O campo `id` deve ser único e é o valor usado no parâmetro `?id=` da URL. O campo `dicaDoChef` é opcional;
+quando ausente, o bloco "Dica do chef" não é exibido. Caso o `id` da URL não exista no JSON (ou o parâmetro
+esteja ausente), a página exibe automaticamente uma mensagem de receita não encontrada.
+
+> A página `receitas.html` (listagem/catálogo) ainda será desenvolvida na Issue #3; até lá, o acesso a
+> `receita.html` é feito diretamente pela URL com o parâmetro `id`.
+
 ## 🛠️ Tecnologias Utilizadas
 
 O projeto será desenvolvido utilizando as seguintes tecnologias:
