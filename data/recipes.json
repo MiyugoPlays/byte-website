@@ -3,7 +3,8 @@
     "id": "lasanha-a-bolonhesa",
     "nome": "Lasanha à Bolonhesa",
     "categoria": "Pratos Principais",
-    "imagem": "https://placehold.co/700x460/6b7c4f/ffffff?text=Lasanha+%C3%A0+Bolonhesa",
+    "destaque": true,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lasagna_bolognese_dish_with_minced_meat%2C_Brisbane.jpg/960px-Lasagna_bolognese_dish_with_minced_meat%2C_Brisbane.jpg",
     "tempoPreparo": "90 minutos",
     "porcoes": 6,
     "dificuldade": "Média",
@@ -34,7 +35,8 @@
     "id": "bolo-de-chocolate",
     "nome": "Bolo de Chocolate",
     "categoria": "Sobremesas",
-    "imagem": "https://placehold.co/700x460/e8622c/ffffff?text=Bolo+de+Chocolate",
+    "destaque": true,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/5/55/Chocolate_fudge_cake.jpg",
     "tempoPreparo": "60 minutos",
     "porcoes": 10,
     "dificuldade": "Fácil",
@@ -63,7 +65,8 @@
     "id": "brigadeiro-tradicional",
     "nome": "Brigadeiro Tradicional",
     "categoria": "Doces",
-    "imagem": "https://placehold.co/700x460/8a4b2f/ffffff?text=Brigadeiro",
+    "destaque": true,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Brigadeiros_Tradicionais.jpg/960px-Brigadeiros_Tradicionais.jpg",
     "tempoPreparo": "30 minutos",
     "porcoes": 20,
     "dificuldade": "Fácil",
@@ -86,7 +89,8 @@
     "id": "panqueca-de-carne",
     "nome": "Panqueca de Carne",
     "categoria": "Pratos Principais",
-    "imagem": "https://placehold.co/700x460/6b7c4f/ffffff?text=Panqueca+de+Carne",
+    "destaque": false,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Crepe_fourree_p1040332.jpg/960px-Crepe_fourree_p1040332.jpg",
     "tempoPreparo": "45 minutos",
     "porcoes": 4,
     "dificuldade": "Média",
@@ -115,7 +119,8 @@
     "id": "salada-caesar",
     "nome": "Salada Caesar",
     "categoria": "Saladas",
-    "imagem": "https://placehold.co/700x460/8faa66/ffffff?text=Salada+Caesar",
+    "destaque": false,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Caesar_salad_%282%29.jpg/960px-Caesar_salad_%282%29.jpg",
     "tempoPreparo": "20 minutos",
     "porcoes": 2,
     "dificuldade": "Fácil",
@@ -141,7 +146,8 @@
     "id": "suco-de-maracuja",
     "nome": "Suco de Maracujá",
     "categoria": "Bebidas",
-    "imagem": "https://placehold.co/700x460/f2b134/ffffff?text=Suco+de+Maracuj%C3%A1",
+    "destaque": false,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Passion_Fruit_juice.jpg/960px-Passion_Fruit_juice.jpg",
     "tempoPreparo": "10 minutos",
     "porcoes": 4,
     "dificuldade": "Fácil",
@@ -159,5 +165,86 @@
       "Adoce a gosto e sirva bem gelado."
     ],
     "dicaDoChef": "Bata rápido demais e a semente amarga; 15 segundos é o suficiente para soltar a polpa sem triturar as sementes."
+  },
+  {
+    "id": "pao-de-queijo",
+    "nome": "Pão de Queijo",
+    "categoria": "Salgados",
+    "destaque": false,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/P%C3%A3o_de_Queijo_%28Brazilian_Cheese_Bread%29.jpg/960px-P%C3%A3o_de_Queijo_%28Brazilian_Cheese_Bread%29.jpg",
+    "tempoPreparo": "40 minutos",
+    "porcoes": 24,
+    "dificuldade": "Média",
+    "descricao": "Casquinha crocante e miolo macio: o clássico salgado mineiro, perfeito para o café da tarde.",
+    "ingredientes": [
+      "500 g de polvilho azedo",
+      "1 xícara de leite",
+      "1/2 xícara de óleo",
+      "2 ovos",
+      "200 g de queijo meia cura ralado",
+      "1 colher (chá) de sal"
+    ],
+    "modoPreparo": [
+      "Ferva o leite com o óleo e escalde o polvilho, misturando bem.",
+      "Deixe esfriar um pouco e adicione os ovos, um de cada vez.",
+      "Acrescente o queijo ralado e o sal, sovando até obter uma massa homogênea.",
+      "Modele bolinhas e disponha em uma assadeira untada.",
+      "Asse a 200 °C por cerca de 25 minutos, até dourarem."
+    ],
+    "dicaDoChef": "Se a massa grudar muito nas mãos, unte-as com um pouco de óleo antes de modelar as bolinhas."
+  },
+  {
+    "id": "torta-de-limao",
+    "nome": "Torta de Limão",
+    "categoria": "Sobremesas",
+    "destaque": false,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/A_Lemon_Meringue_Tart.jpg/960px-A_Lemon_Meringue_Tart.jpg",
+    "tempoPreparo": "50 minutos",
+    "porcoes": 8,
+    "dificuldade": "Média",
+    "descricao": "Base crocante de biscoito, recheio cremoso de limão e cobertura de suspiro maçaricado — equilíbrio perfeito entre doce e azedo.",
+    "ingredientes": [
+      "200 g de biscoito maisena triturado",
+      "100 g de manteiga derretida",
+      "2 latas de leite condensado",
+      "1 xícara de suco de limão",
+      "3 claras",
+      "1 xícara de açúcar (merengue)"
+    ],
+    "modoPreparo": [
+      "Misture o biscoito triturado com a manteiga e forre o fundo de uma forma de aro removível.",
+      "Bata o leite condensado com o suco de limão até engrossar e despeje sobre a base.",
+      "Leve à geladeira por pelo menos 2 horas.",
+      "Bata as claras em neve com o açúcar até obter um merengue firme.",
+      "Cubra a torta com o merengue e maçarique (ou leve ao forno bem quente por poucos minutos) até dourar."
+    ],
+    "dicaDoChef": "Use limões bem maduros para um sabor mais suave e menos amargo no recheio."
+  },
+  {
+    "id": "panqueca-americana",
+    "nome": "Panqueca Americana",
+    "categoria": "Café da Manhã",
+    "destaque": false,
+    "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg/960px-Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg",
+    "tempoPreparo": "20 minutos",
+    "porcoes": 2,
+    "dificuldade": "Fácil",
+    "descricao": "Panquecas fofinhas empilhadas, ideais para um café da manhã especial com mel ou calda de frutas vermelhas.",
+    "ingredientes": [
+      "1 xícara de farinha de trigo",
+      "1 colher (sopa) de açúcar",
+      "1 colher (chá) de fermento em pó",
+      "1 ovo",
+      "1 xícara de leite",
+      "1 colher (sopa) de manteiga derretida",
+      "Uma pitada de sal"
+    ],
+    "modoPreparo": [
+      "Misture os ingredientes secos em uma tigela.",
+      "Em outra tigela, bata o ovo, o leite e a manteiga derretida.",
+      "Junte as duas misturas e mexa até obter uma massa homogênea, sem excesso de grumos.",
+      "Despeje pequenas porções em uma frigideira antiaderente aquecida e vire quando surgirem bolhas na superfície."
+    ],
+    "dicaDoChef": "Não sove demais a massa: misturar rápido demais deixa as panquecas mais fofas."
   }
 ]
