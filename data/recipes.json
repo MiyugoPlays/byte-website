@@ -1,0 +1,163 @@
+[
+  {
+    "id": "lasanha-a-bolonhesa",
+    "nome": "Lasanha à Bolonhesa",
+    "categoria": "Pratos Principais",
+    "imagem": "https://placehold.co/700x460/6b7c4f/ffffff?text=Lasanha+%C3%A0+Bolonhesa",
+    "tempoPreparo": "90 minutos",
+    "porcoes": 6,
+    "dificuldade": "Média",
+    "descricao": "Clássica, saborosa e perfeita para reunir a família! Camadas de massa, molho à bolonhesa e muito queijo gratinado que derrete na boca.",
+    "ingredientes": [
+      "500 g de massa para lasanha",
+      "500 g de carne moída",
+      "1 cebola média picada",
+      "2 dentes de alho picados",
+      "2 tomates picados",
+      "1 lata de molho de tomate (340 g)",
+      "2 colheres (sopa) de azeite",
+      "Sal e pimenta a gosto",
+      "300 g de queijo mussarela fatiado",
+      "50 g de queijo parmesão ralado",
+      "Orégano a gosto"
+    ],
+    "modoPreparo": [
+      "Em uma panela, aqueça o azeite e refogue a cebola e o alho até dourarem.",
+      "Adicione a carne moída e cozinhe até ficar bem dourada.",
+      "Acrescente os tomates, o molho de tomate, tempere com sal, pimenta e orégano. Cozinhe por 15 minutos.",
+      "Em um refratário, faça camadas: molho, massa, mussarela. Repita as camadas e finalize com molho e parmesão.",
+      "Leve ao forno preaquecido a 180 °C por cerca de 40 minutos ou até gratinar."
+    ],
+    "dicaDoChef": "Deixe a lasanha descansar por 10 minutos antes de servir. Isso ajuda a manter as camadas firmes e o sabor ainda melhor!"
+  },
+  {
+    "id": "bolo-de-chocolate",
+    "nome": "Bolo de Chocolate",
+    "categoria": "Sobremesas",
+    "imagem": "https://placehold.co/700x460/e8622c/ffffff?text=Bolo+de+Chocolate",
+    "tempoPreparo": "60 minutos",
+    "porcoes": 10,
+    "dificuldade": "Fácil",
+    "descricao": "Um bolo de chocolate fofinho e úmido, com cobertura brilhante, ideal para qualquer ocasião especial.",
+    "ingredientes": [
+      "3 ovos",
+      "2 xícaras de açúcar",
+      "1 xícara de óleo",
+      "2 xícaras de farinha de trigo",
+      "1 xícara de chocolate em pó",
+      "1 xícara de água quente",
+      "1 colher (sopa) de fermento em pó",
+      "200 g de chocolate meio amargo (cobertura)",
+      "1 caixa de creme de leite (cobertura)"
+    ],
+    "modoPreparo": [
+      "Bata os ovos, o açúcar e o óleo até formar um creme homogêneo.",
+      "Acrescente a farinha e o chocolate em pó, alternando com a água quente.",
+      "Adicione o fermento por último e misture delicadamente.",
+      "Despeje em uma forma untada e asse a 180 °C por cerca de 40 minutos.",
+      "Para a cobertura, derreta o chocolate com o creme de leite e despeje sobre o bolo já frio."
+    ],
+    "dicaDoChef": "Faça o teste do palito antes de retirar o bolo do forno: se sair limpo, está pronto."
+  },
+  {
+    "id": "brigadeiro-tradicional",
+    "nome": "Brigadeiro Tradicional",
+    "categoria": "Doces",
+    "imagem": "https://placehold.co/700x460/8a4b2f/ffffff?text=Brigadeiro",
+    "tempoPreparo": "30 minutos",
+    "porcoes": 20,
+    "dificuldade": "Fácil",
+    "descricao": "O doce mais tradicional das festas brasileiras: cremoso por dentro e enrolado no granulado de chocolate.",
+    "ingredientes": [
+      "1 lata de leite condensado",
+      "1 colher (sopa) de manteiga",
+      "3 colheres (sopa) de chocolate em pó",
+      "Granulado de chocolate para enrolar"
+    ],
+    "modoPreparo": [
+      "Em uma panela, misture o leite condensado, a manteiga e o chocolate em pó.",
+      "Cozinhe em fogo baixo, mexendo sempre, até desgrudar do fundo da panela.",
+      "Deixe esfriar completamente antes de enrolar.",
+      "Modele bolinhas e passe no granulado de chocolate."
+    ],
+    "dicaDoChef": "Unte as mãos com manteiga antes de enrolar para o brigadeiro não grudar nos dedos."
+  },
+  {
+    "id": "panqueca-de-carne",
+    "nome": "Panqueca de Carne",
+    "categoria": "Pratos Principais",
+    "imagem": "https://placehold.co/700x460/6b7c4f/ffffff?text=Panqueca+de+Carne",
+    "tempoPreparo": "45 minutos",
+    "porcoes": 4,
+    "dificuldade": "Média",
+    "descricao": "Massa macia recheada com um refogado suculento de carne moída, coberta com molho de tomate e queijo gratinado.",
+    "ingredientes": [
+      "2 ovos",
+      "1 xícara de leite",
+      "1 xícara de farinha de trigo",
+      "1 colher (sopa) de manteiga derretida",
+      "400 g de carne moída",
+      "1 cebola picada",
+      "2 dentes de alho picados",
+      "Molho de tomate a gosto",
+      "Queijo mussarela ralado"
+    ],
+    "modoPreparo": [
+      "Bata os ovos, o leite, a farinha e a manteiga no liquidificador até formar uma massa lisa.",
+      "Frite pequenas porções da massa em uma frigideira antiaderente, formando discos finos.",
+      "Refogue a cebola e o alho, adicione a carne moída e tempere a gosto.",
+      "Recheie as panquecas com a carne, enrole e disponha em um refratário.",
+      "Cubra com molho de tomate e queijo, e leve ao forno até gratinar."
+    ],
+    "dicaDoChef": "Deixe a massa descansar por 10 minutos antes de fritar: as panquecas ficam mais macias."
+  },
+  {
+    "id": "salada-caesar",
+    "nome": "Salada Caesar",
+    "categoria": "Saladas",
+    "imagem": "https://placehold.co/700x460/8faa66/ffffff?text=Salada+Caesar",
+    "tempoPreparo": "20 minutos",
+    "porcoes": 2,
+    "dificuldade": "Fácil",
+    "descricao": "Alface crocante, croutons dourados e um molho cremoso à base de parmesão — leve, rápida e cheia de sabor.",
+    "ingredientes": [
+      "1 pé de alface romana",
+      "1 xícara de croutons",
+      "50 g de queijo parmesão em lascas",
+      "3 colheres (sopa) de maionese",
+      "1 colher (sopa) de suco de limão",
+      "1 dente de alho amassado",
+      "Sal e pimenta a gosto"
+    ],
+    "modoPreparo": [
+      "Lave e rasgue as folhas de alface em pedaços grandes.",
+      "Misture a maionese, o suco de limão e o alho para fazer o molho.",
+      "Tempere a alface com o molho e misture bem.",
+      "Finalize com croutons e lascas de parmesão."
+    ],
+    "dicaDoChef": "Adicione os croutons só na hora de servir para que continuem crocantes."
+  },
+  {
+    "id": "suco-de-maracuja",
+    "nome": "Suco de Maracujá",
+    "categoria": "Bebidas",
+    "imagem": "https://placehold.co/700x460/f2b134/ffffff?text=Suco+de+Maracuj%C3%A1",
+    "tempoPreparo": "10 minutos",
+    "porcoes": 4,
+    "dificuldade": "Fácil",
+    "descricao": "Suco refrescante e naturalmente ácido, perfeito para os dias quentes ou para acompanhar qualquer refeição.",
+    "ingredientes": [
+      "3 maracujás",
+      "1 litro de água gelada",
+      "4 colheres (sopa) de açúcar (ou a gosto)",
+      "Gelo a gosto"
+    ],
+    "modoPreparo": [
+      "Corte os maracujás ao meio e retire a polpa com uma colher.",
+      "Bata a polpa com a água no liquidificador por cerca de 15 segundos.",
+      "Coe para retirar as sementes.",
+      "Adoce a gosto e sirva bem gelado."
+    ],
+    "dicaDoChef": "Bata rápido demais e a semente amarga; 15 segundos é o suficiente para soltar a polpa sem triturar as sementes."
+  }
+]
