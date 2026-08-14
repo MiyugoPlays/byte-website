@@ -289,9 +289,10 @@ a {
   color: #fff;
 }
 
+/* Estilo base do seu botão mantido */
 #carrosselReceitas .carousel-control-prev,
 #carrosselReceitas .carousel-control-next {
-  width: 3rem;
+  width: auto;
   opacity: 1;
 }
 
@@ -300,8 +301,20 @@ a {
   background-color: var(--color-text);
   border-radius: 50%;
   padding: 1.25rem;
-  background-size: 50%;
+  background-size: 45%;
 }
+
+/* Indicadores no Modo Claro: barrinhas escuras para contraste */
+#carrosselReceitas .carousel-indicators button {
+  background-color: #333333;
+  opacity: 0.4;
+}
+
+#carrosselReceitas .carousel-indicators button.active {
+  background-color: #ff6b00;
+  opacity: 1;
+}
+
 
 /* Rodapé */
 .site-footer {
@@ -687,9 +700,9 @@ button:focus-visible {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -700,6 +713,7 @@ button:focus-visible {
    ========================================================================== */
 
 @media print {
+
   *,
   *::before,
   *::after {
@@ -759,4 +773,3 @@ button:focus-visible {
     page-break-after: avoid;
   }
 }
-

@@ -92,66 +92,8 @@
       <div class="container">
         <h2 id="titulo-destaques">⭐ Receitas em destaque</h2>
 
-        <div id="carrosselReceitas" class="carousel slide" data-bs-ride="false">
-          <div class="carousel-inner">
-
-            <div class="carousel-item active">
-              <div class="recipe-card mx-auto">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Chocolate_fudge_cake.jpg" class="recipe-card-img"
-                  alt="Bolo de chocolate fatiado" width="400" height="260" loading="lazy">
-                <div class="recipe-card-body">
-                  <h3 class="recipe-card-title">Bolo de Chocolate</h3>
-                  <p class="recipe-card-meta">Sobremesas · ⏱ 60 min</p>
-                  <a class="btn btn-outline-recipe" href="receita.html?id=bolo-de-chocolate">Ver detalhes</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="carousel-item">
-              <div class="recipe-card mx-auto">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lasagna_bolognese_dish_with_minced_meat%2C_Brisbane.jpg/960px-Lasagna_bolognese_dish_with_minced_meat%2C_Brisbane.jpg" class="recipe-card-img"
-                  alt="Lasanha à bolonhesa gratinada" width="400" height="260" loading="lazy">
-                <div class="recipe-card-body">
-                  <h3 class="recipe-card-title">Lasanha à Bolonhesa</h3>
-                  <p class="recipe-card-meta">Pratos Principais · ⏱ 90 min</p>
-                  <a class="btn btn-outline-recipe" href="receita.html?id=lasanha-a-bolonhesa">Ver detalhes</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="carousel-item">
-              <div class="recipe-card mx-auto">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Brigadeiros_Tradicionais.jpg/960px-Brigadeiros_Tradicionais.jpg" class="recipe-card-img"
-                  alt="Brigadeiros tradicionais em forminhas" width="400" height="260" loading="lazy">
-                <div class="recipe-card-body">
-                  <h3 class="recipe-card-title">Brigadeiro Tradicional</h3>
-                  <p class="recipe-card-meta">Doces · ⏱ 30 min</p>
-                  <a class="btn btn-outline-recipe" href="receita.html?id=brigadeiro-tradicional">Ver detalhes</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#carrosselReceitas"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Receita anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carrosselReceitas"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próxima receita</span>
-          </button>
-
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carrosselReceitas" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Bolo de Chocolate"></button>
-            <button type="button" data-bs-target="#carrosselReceitas" data-bs-slide-to="1"
-              aria-label="Lasanha à Bolonhesa"></button>
-            <button type="button" data-bs-target="#carrosselReceitas" data-bs-slide-to="2"
-              aria-label="Brigadeiro Tradicional"></button>
-          </div>
+        <div id="receita-carrossel-container">
+          <!-- Aqui esta sendo gerado dinamicamente com js/receita-carrossel.js-->
         </div>
       </div>
     </section>
@@ -176,17 +118,23 @@
       </nav>
 
       <ul class="footer-social" aria-label="Redes sociais">
-        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Byte no Instagram">📷</a></li>
-        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Byte no Facebook">📘</a></li>
-        <li><a href="https://github.com/MiyugoPlays/byte-website" target="_blank" rel="noopener noreferrer" aria-label="Repositório do Byte no GitHub">💻</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+            aria-label="Byte no Instagram">📷</a></li>
+        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+            aria-label="Byte no Facebook">📘</a></li>
+        <li><a href="https://github.com/MiyugoPlays/byte-website" target="_blank" rel="noopener noreferrer"
+            aria-label="Repositório do Byte no GitHub">💻</a></li>
       </ul>
     </div>
 
-    <p class="footer-copy">© <span id="ano-atual">2026</span> Byte - Catálogo de Receitas. Todos os direitos reservados.</p>
+    <p class="footer-copy">© <span id="ano-atual">2026</span> Byte - Catálogo de Receitas. Todos os direitos reservados.
+    </p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="js/receita-carrossel.js"></script>
   <script src="js/app.js"></script>
 
 </body>
