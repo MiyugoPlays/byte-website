@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="no-js" lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todas as Receitas - Byte</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description"
+    content="Explore o catálogo completo de receitas do Byte: busque por nome, filtre por categoria e encontre a próxima receita para preparar.">
+
+  <meta property="og:title" content="Todas as Receitas - Byte">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafaf5">
+</head>
+
+<body>
+
+  <a class="visually-hidden-focusable" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho: mesma marcação usada em index.html, mantendo o item "Receitas" ativo -->
+  <header id="cabecalho" class="site-header sticky-top border-bottom">
+    <nav class="navbar navbar-expand-lg py-3" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand d-flex flex-column lh-1 fw-bold" href="index.html">
+          Byte<span class="navbar-brand-tagline fw-semibold text-uppercase text-body-secondary">Catálogo de
+            Receitas</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center text-center gap-2 gap-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-medium" aria-current="page" href="receitas.html">Receitas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="sobre.html">Sobre o Projeto</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" id="alternar-tema"
+                class="theme-toggle btn btn-link rounded-pill p-2 lh-1 text-decoration-none" aria-pressed="false"
+                aria-label="Alternar para tema escuro">
+                <span aria-hidden="true">🌙</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <div class="container py-4 py-lg-5">
+
+      <!-- Título: para trocar o texto de apresentação, edite o bloco abaixo -->
+      <div class="text-center mb-4">
+        <h1 class="fs-1 fw-bold mb-2">Todas as Receitas</h1>
+        <p class="text-body-secondary mb-0">Explore nosso catálogo completo de receitas e encontre a próxima
+          delícia para preparar.</p>
+      </div>
+
+      <!-- Busca, filtro por categoria e ordenação. As opções de categoria são preenchidas via JS -->
+      <form class="row g-3 mb-4" role="search" onsubmit="return false">
+        <div class="col-md-6">
+          <label for="busca-receita" class="visually-hidden">Buscar receita pelo nome</label>
+          <div class="input-group">
+            <span class="input-group-text" aria-hidden="true">🔎</span>
+            <input type="search" id="busca-receita" class="form-control" placeholder="Buscar receita...">
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <label for="filtro-categoria" class="visually-hidden">Filtrar por categoria</label>
+          <select id="filtro-categoria" class="form-select">
+            <option value="">Todas as categorias</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-3">
+          <label for="ordenar-receitas" class="visually-hidden">Ordenar receitas</label>
+          <select id="ordenar-receitas" class="form-select">
+            <option value="az">Ordenar: A - Z</option>
+            <option value="za">Ordenar: Z - A</option>
+          </select>
+        </div>
+      </form>
+
+      <!-- Estado de carregamento, exibido enquanto o JSON é lido -->
+      <p id="estado-carregando" class="text-center text-body-secondary py-5">Carregando receitas...</p>
+
+      <!-- Nenhuma receita encontrada para a busca/filtro atual, ou catálogo vazio -->
+      <div id="estado-vazio" class="alert alert-warning text-center" role="status" hidden>
+        Nenhuma receita encontrada. Tente ajustar sua busca ou filtro.
+      </div>
+
+      <!-- Falha ao carregar o arquivo JSON -->
+      <div id="estado-erro" class="alert alert-danger text-center" role="alert" hidden>
+        Não foi possível carregar as receitas agora. Tente novamente mais tarde.
+      </div>
+
+      <!-- Grade de receitas, preenchida dinamicamente a partir de data/recipes.json -->
+      <div id="grade-receitas" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" hidden></div>
+
+      <div class="text-center mt-4">
+        <button type="button" id="botao-carregar-mais" class="btn btn-outline-secondary rounded-pill px-4" hidden>
+          Carregar mais receitas
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Rodapé: mesma marcação usada em index.html -->
+  <footer id="rodape" class="site-footer mt-5">
+    <p class="footer-tagline text-white text-center fw-semibold py-3 mb-0">Cozinhar é transformar ingredientes em
+      momentos inesquecíveis.</p>
+
+    <div
+      class="container footer-main d-flex flex-wrap flex-column flex-sm-row gap-4 align-items-center justify-content-between text-center text-sm-start py-4">
+      <div class="footer-brand">
+        <span class="navbar-brand d-flex flex-column lh-1 fw-bold">Byte<span
+            class="navbar-brand-tagline fw-semibold text-uppercase">Catálogo de Receitas</span></span>
+      </div>
+
+      <nav aria-label="Links do rodapé">
+        <ul class="footer-links list-unstyled d-flex gap-3 mb-0">
+          <li><a class="text-decoration-none" href="index.html">Início</a></li>
+          <li><a class="text-decoration-none" href="receitas.html">Receitas</a></li>
+          <li><a class="text-decoration-none" href="sobre.html">Sobre o Projeto</a></li>
+        </ul>
+      </nav>
+
+      <ul class="footer-social list-unstyled d-flex gap-3 fs-4 mb-0" aria-label="Redes sociais">
+        <li><a class="text-decoration-none" href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+            aria-label="Byte no Instagram">📷</a></li>
+        <li><a class="text-decoration-none" href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+            aria-label="Byte no Facebook">📘</a></li>
+        <li><a class="text-decoration-none" href="https://github.com/MiyugoPlays/byte-website" target="_blank"
+            rel="noopener noreferrer" aria-label="Repositório do Byte no GitHub">💻</a></li>
+      </ul>
+    </div>
+
+    <p class="footer-copy text-center small py-3 mb-0">© <span id="ano-atual">2026</span> Byte - Catálogo de
+      Receitas. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/receitas.js"></script>
+
+</body>
+
+</html>

@@ -61,8 +61,30 @@ O campo `id` deve ser único e é o valor usado no parâmetro `?id=` da URL. O c
 quando ausente, o bloco "Dica do chef" não é exibido. Caso o `id` da URL não exista no JSON (ou o parâmetro
 esteja ausente), a página exibe automaticamente uma mensagem de receita não encontrada.
 
-> A página `receitas.html` (listagem/catálogo) ainda será desenvolvida na Issue #3; até lá, o acesso a
-> `receita.html` é feito diretamente pela URL com o parâmetro `id`.
+## 📋 Página de Listagem de Receitas
+
+A página `receitas.html` exibe todo o catálogo em uma grade de cards, também lida dinamicamente a partir de
+`data/recipes.json` (mesmo arquivo usado na página inicial e na página de detalhes).
+
+| O que editar | Onde editar |
+|---|---|
+| Estrutura/layout da página de listagem | `receitas.html` |
+| Lógica de leitura do JSON, busca, filtro, ordenação e paginação | `js/receitas.js` |
+| Dados das receitas (adicionar/editar receitas) | `data/recipes.json` |
+
+Funcionalidades da página:
+- **Busca** por nome da receita (`#busca-receita`), em tempo real conforme o usuário digita.
+- **Filtro por categoria** (`#filtro-categoria`): as opções são geradas automaticamente a partir das
+  categorias presentes no JSON, não precisam ser editadas manualmente.
+- **Ordenação** A-Z / Z-A pelo nome da receita (`#ordenar-receitas`).
+- **Carregar mais receitas**: os cards são exibidos em lotes de 6 (constante `ITENS_POR_PAGINA` em
+  `js/receitas.js`); o botão só aparece quando ainda há receitas fora da página atual.
+- **Estados de carregamento, vazio e erro**: mensagens dedicadas para enquanto o JSON carrega, quando a
+  busca/filtro não encontra nenhuma receita e quando o arquivo JSON falha ao carregar.
+
+Cada card usa os mesmos componentes e classes de tema já usados no carrossel da página inicial
+(`card recipe-card`, `btn-outline-recipe`), garantindo visual consistente entre as duas páginas, e leva
+para `receita.html?id=<id-da-receita>`.
 
 ## 🛠️ Tecnologias Utilizadas
 
