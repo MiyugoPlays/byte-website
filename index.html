@@ -31,30 +31,30 @@
   <a class="visually-hidden-focusable" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
   <!-- Cabeçalho: para trocar o texto do logo ou os itens de menu, edite o bloco abaixo -->
-  <header id="cabecalho" class="site-header">
-    <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+  <header id="cabecalho" class="site-header sticky-top border-bottom">
+    <nav class="navbar navbar-expand-lg py-3" aria-label="Navegação principal">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
-          Byte<span class="navbar-brand-tagline">Catálogo de Receitas</span>
+        <a class="navbar-brand d-flex flex-column lh-1 fw-bold" href="index.html">
+          Byte<span class="navbar-brand-tagline fw-semibold text-uppercase text-body-secondary">Catálogo de Receitas</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
           aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="menuPrincipal">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center text-center gap-2 gap-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+              <a class="nav-link active fw-medium" aria-current="page" href="index.html">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="receitas.html">Receitas</a>
+              <a class="nav-link fw-medium" href="receitas.html">Receitas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="sobre.html">Sobre o Projeto</a>
+              <a class="nav-link fw-medium" href="sobre.html">Sobre o Projeto</a>
             </li>
             <li class="nav-item">
-              <button type="button" id="alternar-tema" class="theme-toggle" aria-pressed="false"
-                aria-label="Alternar para tema escuro">
+              <button type="button" id="alternar-tema" class="theme-toggle btn btn-link rounded-pill p-2 lh-1 text-decoration-none"
+                aria-pressed="false" aria-label="Alternar para tema escuro">
                 <span aria-hidden="true">🌙</span>
               </button>
             </li>
@@ -67,20 +67,19 @@
   <main id="conteudo-principal">
 
     <!-- Apresentação: para trocar o título ou o texto de objetivo do site, edite o bloco abaixo -->
-    <section class="hero">
+    <section class="hero py-4 py-lg-5">
       <div class="container">
         <div class="row align-items-center gy-4">
-          <div class="col-lg-6">
-            <h1 class="hero-title">Sabor que inspira, <span class="text-accent">receitas</span> que conectam.</h1>
-            <p class="hero-text">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="hero-title fs-1 fw-bold lh-sm">Sabor que inspira, <span class="text-accent">receitas</span> que conectam.</h1>
+            <p class="hero-text text-body-secondary my-4 mx-auto mx-lg-0">
               Bem-vindo ao Byte, seu catálogo de receitas favoritas. Aqui você encontra pratos deliciosos
               para todos os momentos.
             </p>
-            <a class="btn btn-cta" href="receitas.html">Ver todas as receitas</a>
+            <a class="btn btn-cta rounded-pill fw-semibold px-4 py-2" href="receitas.html">Ver todas as receitas</a>
           </div>
           <div class="col-lg-6">
-            <img class="hero-image"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Spaghetti_bolognese_at_restaurant_Persilja.jpg/960px-Spaghetti_bolognese_at_restaurant_Persilja.jpg"
+            <img class="hero-image w-100 h-auto object-fit-cover rounded-4" src="https://placehold.co/560x420/f3ede1/2b2b2b?text=Prato+em+destaque"
               alt="Prato de massa com molho de tomate servido à mesa" width="560" height="420" loading="eager">
           </div>
         </div>
@@ -88,9 +87,9 @@
     </section>
 
     <!-- Receitas em destaque: itens de exemplo. A integração com o arquivo JSON acontece na Issue 2 -->
-    <section class="destaques" aria-labelledby="titulo-destaques">
+    <section class="destaques py-4 py-lg-5" aria-labelledby="titulo-destaques">
       <div class="container">
-        <h2 id="titulo-destaques">⭐ Receitas em destaque</h2>
+        <h2 id="titulo-destaques" class="fw-bold mb-4">⭐ Receitas em destaque</h2>
 
         <div id="receita-carrossel-container">
           <!-- Aqui esta sendo gerado dinamicamente com js/receita-carrossel.js-->
@@ -101,34 +100,30 @@
   </main>
 
   <!-- Rodapé: para trocar links ou redes sociais, edite o bloco abaixo -->
-  <footer id="rodape" class="site-footer">
-    <p class="footer-tagline">Cozinhar é transformar ingredientes em momentos inesquecíveis.</p>
+  <footer id="rodape" class="site-footer mt-5">
+    <p class="footer-tagline text-white text-center fw-semibold py-3 mb-0">Cozinhar é transformar ingredientes em momentos inesquecíveis.</p>
 
-    <div class="container footer-main">
+    <div class="container footer-main d-flex flex-wrap flex-column flex-sm-row gap-4 align-items-center justify-content-between text-center text-sm-start py-4">
       <div class="footer-brand">
-        <span class="navbar-brand">Byte<span class="navbar-brand-tagline">Catálogo de Receitas</span></span>
+        <span class="navbar-brand d-flex flex-column lh-1 fw-bold">Byte<span class="navbar-brand-tagline fw-semibold text-uppercase">Catálogo de Receitas</span></span>
       </div>
 
       <nav aria-label="Links do rodapé">
-        <ul class="footer-links">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="receitas.html">Receitas</a></li>
-          <li><a href="sobre.html">Sobre o Projeto</a></li>
+        <ul class="footer-links list-unstyled d-flex gap-3 mb-0">
+          <li><a class="text-decoration-none" href="index.html">Início</a></li>
+          <li><a class="text-decoration-none" href="receitas.html">Receitas</a></li>
+          <li><a class="text-decoration-none" href="sobre.html">Sobre o Projeto</a></li>
         </ul>
       </nav>
 
-      <ul class="footer-social" aria-label="Redes sociais">
-        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-            aria-label="Byte no Instagram">📷</a></li>
-        <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-            aria-label="Byte no Facebook">📘</a></li>
-        <li><a href="https://github.com/MiyugoPlays/byte-website" target="_blank" rel="noopener noreferrer"
-            aria-label="Repositório do Byte no GitHub">💻</a></li>
+      <ul class="footer-social list-unstyled d-flex gap-3 fs-4 mb-0" aria-label="Redes sociais">
+        <li><a class="text-decoration-none" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Byte no Instagram">📷</a></li>
+        <li><a class="text-decoration-none" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Byte no Facebook">📘</a></li>
+        <li><a class="text-decoration-none" href="https://github.com/MiyugoPlays/byte-website" target="_blank" rel="noopener noreferrer" aria-label="Repositório do Byte no GitHub">💻</a></li>
       </ul>
     </div>
 
-    <p class="footer-copy">© <span id="ano-atual">2026</span> Byte - Catálogo de Receitas. Todos os direitos reservados.
-    </p>
+    <p class="footer-copy text-center small py-3 mb-0">© <span id="ano-atual">2026</span> Byte - Catálogo de Receitas. Todos os direitos reservados.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
