@@ -202,6 +202,11 @@ body {
   --bs-card-border-radius: .75rem;
   --bs-card-spacer-y: 1.25rem;
   --bs-card-spacer-x: 1.25rem;
+}
+
+/* No carrossel da home, um card por slide precisa de um teto de largura;
+   na grade da página de receitas, o próprio grid do Bootstrap já resolve isso. */
+#carrosselReceitas .recipe-card {
   max-width: 22rem;
 }
 
