@@ -46,6 +46,7 @@ Formato esperado de cada receita em `data/recipes.json`:
   "id": "identificador-unico-da-receita",
   "nome": "Nome da Receita",
   "categoria": "Categoria",
+  "destaque": false,
   "imagem": "URL da imagem",
   "tempoPreparo": "90 minutos",
   "porcoes": 6,
@@ -63,6 +64,39 @@ esteja ausente), a página exibe automaticamente uma mensagem de receita não en
 
 > A página `receitas.html` (listagem/catálogo) ainda será desenvolvida na Issue #3; até lá, o acesso a
 > `receita.html` é feito diretamente pela URL com o parâmetro `id`.
+
+## 🗂️ Organização do Catálogo (data/recipes.json)
+
+Todas as receitas ficam em um único arquivo (`data/recipes.json`), evitando duplicar dados em múltiplos
+lugares. Para marcar quais receitas aparecem no carrossel de destaque da página inicial, cada receita tem
+um campo booleano `destaque` (`true` ou `false`) em vez de existir um segundo arquivo só com as receitas
+em destaque — assim há uma única fonte de dados para todo o catálogo.
+
+Atualmente o catálogo tem 9 receitas em 7 categorias (Pratos Principais, Sobremesas, Doces, Saladas,
+Bebidas, Salgados e Café da Manhã), das quais 3 estão marcadas como `destaque: true` (as mesmas exibidas
+hoje no carrossel da página inicial). A Issue #2 é responsável por fazer o carrossel ler esse campo
+dinamicamente em vez de usar os itens de exemplo fixos em `index.html`.
+
+Para adicionar uma nova receita, inclua um novo objeto seguindo o formato acima ao final do array,
+garantindo um `id` único (sem espaços ou acentos) e preenchendo todos os campos obrigatórios.
+
+### 📷 Créditos das imagens
+
+As fotos das receitas e a imagem da página inicial vêm do [Wikimedia Commons](https://commons.wikimedia.org),
+sob licenças livres que exigem atribuição (exceto a marcada como CC0). Créditos:
+
+| Receita / uso | Autor | Licença | Fonte |
+|---|---|---|---|
+| Página inicial (hero) | JIP | CC BY-SA 3.0 | [Spaghetti bolognese at restaurant Persilja](https://commons.wikimedia.org/wiki/File:Spaghetti_bolognese_at_restaurant_Persilja.jpg) |
+| Lasanha à Bolonhesa | Kgbo | CC BY-SA 4.0 | [Lasagna bolognese dish with minced meat, Brisbane](https://commons.wikimedia.org/wiki/File:Lasagna_bolognese_dish_with_minced_meat,_Brisbane.jpg) |
+| Bolo de Chocolate | Tracy Hunter | CC BY 2.0 | [Chocolate fudge cake](https://commons.wikimedia.org/wiki/File:Chocolate_fudge_cake.jpg) |
+| Brigadeiro Tradicional | Márcia Cristina Machado | CC BY-SA 4.0 | [Brigadeiros Tradicionais](https://commons.wikimedia.org/wiki/File:Brigadeiros_Tradicionais.jpg) |
+| Panqueca de Carne | David Monniaux | CC BY-SA 3.0 | [Crepe fourree](https://commons.wikimedia.org/wiki/File:Crepe_fourree_p1040332.jpg) |
+| Salada Caesar | Geoff Peters | CC BY 2.0 | [Caesar salad (2)](https://commons.wikimedia.org/wiki/File:Caesar_salad_(2).jpg) |
+| Suco de Maracujá | Dr. Chinchu C. | CC BY-SA 4.0 | [Passion Fruit juice](https://commons.wikimedia.org/wiki/File:Passion_Fruit_juice.jpg) |
+| Pão de Queijo | Joy | CC BY 2.0 | [Pão de Queijo (Brazilian Cheese Bread)](https://commons.wikimedia.org/wiki/File:P%C3%A3o_de_Queijo_(Brazilian_Cheese_Bread).jpg) |
+| Torta de Limão | PDPhoto.org | Domínio público | [A Lemon Meringue Tart](https://commons.wikimedia.org/wiki/File:A_Lemon_Meringue_Tart.jpg) |
+| Panqueca Americana | Mae Mu | CC0 | [Foodiesfeed.com pouring-honey-on-pancakes-with-walnuts](https://commons.wikimedia.org/wiki/File:Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg) |
 
 ## 🛠️ Tecnologias Utilizadas
 
