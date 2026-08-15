@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sobre o Projeto - Byte</title>
+  <title>Todas as Receitas - Byte</title>
 
   <!-- Preconnect & CDNs -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -14,10 +14,10 @@
 
   <!-- Meta SEO -->
   <meta name="description"
-    content="Conheça o projeto Byte: o que é, seus objetivos, as tecnologias utilizadas e a equipe responsável pelo desenvolvimento.">
+    content="Explore o catálogo completo de receitas do Byte: busque por nome, filtre por categoria e encontre a próxima receita para preparar.">
 
   <!-- Open Graph / Redes Sociais -->
-  <meta property="og:title" content="Sobre o Projeto - Byte">
+  <meta property="og:title" content="Todas as Receitas - Byte">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
@@ -57,10 +57,10 @@
               <a class="nav-link fw-medium" href="index.html">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="listagem-receitas.html">Receitas</a>
+              <a class="nav-link active fw-medium" aria-current="page" href="listagem-receitas.html">Receitas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active fw-medium" aria-current="page" href="sobre.html">Sobre o Projeto</a>
+              <a class="nav-link fw-medium" href="sobre.html">Sobre o Projeto</a>
             </li>
             <li class="nav-item">
               <button type="button" id="alternar-tema"
@@ -77,114 +77,60 @@
 
   <!-- Conteúdo Principal -->
   <main id="conteudo-principal" class="flex-grow-1">
+    <div class="container py-4 py-lg-5">
 
-    <!-- Descrição do projeto -->
-    <section class="py-4 py-lg-5">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-8">
-            <h1 class="fs-1 fw-bold mb-3">Sobre o Byte</h1>
-            <p class="text-body-secondary mb-0">
-              O Byte é um catálogo de receitas culinárias desenvolvido para oferecer uma experiência simples
-              e rápida de navegação. O objetivo é permitir que qualquer pessoa explore uma lista de receitas,
-              veja detalhes de preparo e ingredientes, e encontre a próxima receita para colocar a mão na
-              massa — tudo isso sem cadastro, sem complicação.
-            </p>
+      <!-- Título de Apresentação -->
+      <div class="text-center mb-4">
+        <h1 class="fs-1 fw-bold mb-2">Todas as Receitas</h1>
+        <p class="text-body-secondary mb-0">Explore nosso catálogo completo de receitas e encontre a próxima
+          delícia para preparar.</p>
+      </div>
+
+      <!-- Formulário de Busca, Filtro e Ordenação -->
+      <form class="row g-3 mb-4" role="search" onsubmit="return false">
+        <div class="col-md-6">
+          <label for="busca-receita" class="visually-hidden">Buscar receita pelo nome</label>
+          <div class="input-group">
+            <span class="input-group-text" aria-hidden="true">🔎</span>
+            <input type="search" id="busca-receita" class="form-control" placeholder="Buscar receita...">
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Tecnologias utilizadas -->
-    <section class="py-4 py-lg-5" aria-labelledby="titulo-tecnologias">
-      <div class="container">
-        <h2 id="titulo-tecnologias" class="fw-bold text-center mb-4">🛠️ Tecnologias Utilizadas</h2>
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3 justify-content-center text-center">
-          <div class="col">
-            <div class="card h-100 recipe-card">
-              <div class="card-body">
-                <p class="fs-3 mb-2" aria-hidden="true">📄</p>
-                <p class="fw-semibold mb-0 small">HTML5</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 recipe-card">
-              <div class="card-body">
-                <p class="fs-3 mb-2" aria-hidden="true">🎨</p>
-                <p class="fw-semibold mb-0 small">CSS3</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 recipe-card">
-              <div class="card-body">
-                <p class="fs-3 mb-2" aria-hidden="true">⚙️</p>
-                <p class="fw-semibold mb-0 small">JavaScript</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 recipe-card">
-              <div class="card-body">
-                <p class="fs-3 mb-2" aria-hidden="true">🗂️</p>
-                <p class="fw-semibold mb-0 small">JSON</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 recipe-card">
-              <div class="card-body">
-                <p class="fs-3 mb-2" aria-hidden="true">🅱️</p>
-                <p class="fw-semibold mb-0 small">Bootstrap 5</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 recipe-card">
-              <div class="card-body">
-                <p class="fs-3 mb-2" aria-hidden="true">🌳</p>
-                <p class="fw-semibold mb-0 small">Git &amp; GitHub</p>
-              </div>
-            </div>
-          </div>
+        <div class="col-6 col-md-3">
+          <label for="filtro-categoria" class="visually-hidden">Filtrar por categoria</label>
+          <select id="filtro-categoria" class="form-select">
+            <option value="">Todas as categorias</option>
+          </select>
         </div>
-      </div>
-    </section>
-
-    <!-- Equipe -->
-    <section class="py-4 py-lg-5" aria-labelledby="titulo-equipe">
-      <div class="container">
-        <h2 id="titulo-equipe" class="fw-bold text-center mb-4">👩‍💻 Equipe</h2>
-        <div class="row row-cols-1 row-cols-sm-2 g-4 justify-content-center">
-          <div class="col">
-            <div class="card recipe-card h-100 text-center">
-              <div class="card-body d-flex flex-column align-items-center">
-                <img src="https://github.com/Karinelucion.png" class="rounded-circle mb-3" width="88" height="88"
-                  alt="Foto de perfil de Karine Lucion no GitHub" loading="lazy">
-                <h3 class="card-title fs-5 fw-bold mb-1">Karine Lucion</h3>
-                <p class="card-text text-body-secondary small mb-3">Desenvolvimento do projeto Byte</p>
-                <a class="btn btn-outline-recipe rounded-pill fw-semibold mt-auto"
-                  href="https://github.com/Karinelucion" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card recipe-card h-100 text-center">
-              <div class="card-body d-flex flex-column align-items-center">
-                <img src="https://github.com/MiyugoPlays.png" class="rounded-circle mb-3" width="88" height="88"
-                  alt="Foto de perfil de MiyugoPlays no GitHub" loading="lazy">
-                <h3 class="card-title fs-5 fw-bold mb-1">MiyugoPlays</h3>
-                <p class="card-text text-body-secondary small mb-3">Desenvolvimento do projeto Byte</p>
-                <a class="btn btn-outline-recipe rounded-pill fw-semibold mt-auto" href="https://github.com/MiyugoPlays"
-                  target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
-              </div>
-            </div>
-          </div>
+        <div class="col-6 col-md-3">
+          <label for="ordenar-receitas" class="visually-hidden">Ordenar receitas</label>
+          <select id="ordenar-receitas" class="form-select">
+            <option value="az">Ordenar: A - Z</option>
+            <option value="za">Ordenar: Z - A</option>
+          </select>
         </div>
-      </div>
-    </section>
+      </form>
 
+      <!-- Estados da Aplicação (Carregando, Vazio, Erro) -->
+      <p id="estado-carregando" class="text-center text-body-secondary py-5">Carregando receitas...</p>
+
+      <div id="estado-vazio" class="alert alert-warning text-center" role="status" hidden>
+        Nenhuma receita encontrada. Tente ajustar sua busca ou filtro.
+      </div>
+
+      <div id="estado-erro" class="alert alert-danger text-center" role="alert" hidden>
+        Não foi possível carregar as receitas agora. Tente novamente mais tarde.
+      </div>
+
+      <!-- Grade de Receitas (Dinamizada via JS) -->
+      <div id="grade-receitas" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" hidden></div>
+
+      <div class="text-center mt-4">
+        <button type="button" id="botao-carregar-mais" class="btn btn-outline-secondary rounded-pill px-4" hidden>
+          Carregar mais receitas
+        </button>
+      </div>
+
+    </div>
   </main>
 
   <!-- Rodapé Fixo e Padronizado -->
@@ -275,6 +221,7 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <script src="js/app.js"></script>
+  <script src="js/listagem-receitas.js"></script>
 
 </body>
 

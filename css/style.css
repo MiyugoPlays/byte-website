@@ -1,12 +1,5 @@
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -16,13 +9,6 @@ html {
   font-size: 1em;
   line-height: 1.4;
 }
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -34,10 +20,6 @@ html {
   text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
 hr {
   display: block;
   height: 1px;
@@ -46,12 +28,6 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
 
 audio,
 canvas,
@@ -62,19 +38,11 @@ video {
   vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
-
-/*
- * Allow only vertical resizing of textareas.
- */
 
 textarea {
   resize: vertical;
@@ -84,10 +52,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-/*
- * Paleta de cores do tema. Para ajustar as cores do site, edite as variáveis
- * abaixo (tema claro) e o bloco "Tema escuro" logo em seguida.
- */
 :root {
   --color-bg: #faf8f3;
   --color-bg-alt: #ffffff;
@@ -98,13 +62,9 @@ textarea {
   --color-secondary: #3f4a34;
   --color-secondary-dark: #2f3827;
   --color-footer-band: #4b5a3a;
-  --color-footer-bg: #1c1c1c;
-  --color-footer-text: #f2f2f2;
   --color-border: #e5e0d5;
 
-  /* Retema as variáveis do Bootstrap com a paleta do site, para que os
-     componentes e utilitários do Bootstrap (body, a, .btn, .card,
-     .text-muted, .border, etc.) usem essas cores automaticamente. */
+  /* Mapeamento para componentes nativos do Bootstrap */
   --bs-body-bg: var(--color-bg);
   --bs-body-color: var(--color-text);
   --bs-body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -118,7 +78,7 @@ textarea {
   --bs-primary-rgb: 232, 98, 44;
 }
 
-/* Tema escuro: aplicado pela preferência do sistema ou pelo botão de alternância no cabeçalho */
+/* Tema escuro */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --color-bg: #1b1b1b;
@@ -141,7 +101,7 @@ body {
   transition: background-color .2s ease, color .2s ease;
 }
 
-/* Cabeçalho */
+/* Cabeçalho & Rodapé */
 .site-header {
   background-color: var(--color-bg-alt);
 }
@@ -158,11 +118,45 @@ body {
 
 .site-header .nav-link {
   color: var(--color-text);
+  transition: color 0.2s ease;
 }
 
 .site-header .nav-link.active,
 .site-header .nav-link:hover {
   color: var(--color-primary);
+}
+
+/* Transição e Hover Laranja Unificado para os Links e Ícones do Rodapé */
+.footer-link {
+  color: var(--color-text-muted);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--color-primary) !important;
+}
+
+/* Rodapé Fixo e Unificado */
+.footer-static-dark {
+  background-color: var(--color-footer-bg, #1c1c1c) !important;
+  color: #f2f2f2 !important;
+}
+
+/* Marca da esquerda: sem efeito hover */
+.footer-static-dark .navbar-brand {
+  color: var(--color-primary) !important;
+  pointer-events: none;
+  /* Mantém o visual estático sem responder a hover */
+}
+
+/* Links e Ícones: Hover Laranja com Transição Suave */
+.footer-static-link {
+  color: #c7c7c7 !important;
+  transition: color 0.2s ease;
+}
+
+.footer-static-link:hover {
+  color: var(--color-primary) !important;
 }
 
 .theme-toggle {
@@ -204,8 +198,6 @@ body {
   --bs-card-spacer-x: 1.25rem;
 }
 
-/* No carrossel da home, um card por slide precisa de um teto de largura;
-   na grade da página de receitas, o próprio grid do Bootstrap já resolve isso. */
 #carrosselReceitas .recipe-card {
   max-width: 22rem;
 }
@@ -225,7 +217,7 @@ body {
   --bs-btn-active-border-color: var(--color-primary);
 }
 
-/* Estilo base do seu botão mantido */
+/* Controles do Carrossel */
 #carrosselReceitas .carousel-control-prev,
 #carrosselReceitas .carousel-control-next {
   width: auto;
@@ -240,7 +232,6 @@ body {
   background-size: 45%;
 }
 
-/* Indicadores no Modo Claro: barrinhas escuras para contraste */
 #carrosselReceitas .carousel-indicators button {
   background-color: #333333;
   opacity: 0.4;
@@ -251,39 +242,12 @@ body {
   opacity: 1;
 }
 
-
 /* Rodapé */
 .footer-tagline {
   background-color: var(--color-footer-band);
 }
 
-.footer-main {
-  background-color: var(--color-footer-bg);
-  color: var(--color-footer-text);
-}
-
-.footer-main .navbar-brand {
-  color: #fff;
-}
-
-.footer-main .navbar-brand-tagline {
-  color: #b8b8b8;
-}
-
-.footer-links a {
-  color: #d8d8d8;
-}
-
-.footer-links a:hover {
-  color: var(--color-primary);
-}
-
-.footer-copy {
-  background-color: var(--color-footer-bg);
-  color: #9c9c9c;
-}
-
-/* Página de detalhes da receita */
+/* Detalhes da receita */
 .breadcrumb-nav a {
   color: var(--color-text-muted);
 }
@@ -371,34 +335,17 @@ body {
   }
 }
 
-/* Acessibilidade: foco visível para navegação por teclado */
+/* Acessibilidade */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
 .hidden,
 [hidden] {
   display: none !important;
 }
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
 
 .visually-hidden {
   border: 0;
@@ -410,14 +357,7 @@ button:focus-visible {
   position: absolute;
   white-space: nowrap;
   width: 1px;
-  /* 1 */
 }
-
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
 
 .visually-hidden.focusable:active,
 .visually-hidden.focusable:focus {
@@ -430,20 +370,9 @@ button:focus-visible {
   width: auto;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
 .invisible {
   visibility: hidden;
 }
-
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
 
 .clearfix::before,
 .clearfix::after {
@@ -453,89 +382,4 @@ button:focus-visible {
 
 .clearfix::after {
   clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
 }

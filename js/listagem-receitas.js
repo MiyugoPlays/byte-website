@@ -1,4 +1,4 @@
-// Página de listagem de receitas: lê data/recipes.json e renderiza os cards
+// Página de listagem de receitas: lê data/receitas.json e renderiza os cards
 // na grade, com busca por nome, filtro por categoria, ordenação e paginação
 // simples ("Carregar mais receitas").
 
@@ -66,6 +66,8 @@ function criarCard(receita) {
 }
 
 function preencherCategorias(receitas) {
+  if (!filtroCategoria) return;
+
   const categorias = [...new Set(receitas.map((receita) => receita.categoria))]
     .sort((a, b) => a.localeCompare(b, 'pt-BR'));
 
@@ -78,7 +80,7 @@ function preencherCategorias(receitas) {
 }
 
 function ordenarReceitas() {
-  const ordem = campoOrdenar.value;
+  const ordem = campoOrdenar ? campoOrdenar.value : 'az';
   receitasFiltradas.sort((a, b) => {
     return ordem === 'za'
       ? b.nome.localeCompare(a.nome, 'pt-BR')
@@ -87,20 +89,24 @@ function ordenarReceitas() {
 }
 
 function mostrarMaisReceitas() {
+  if (!gradeReceitas) return;
+
   const proximas = receitasFiltradas.slice(itensExibidos, itensExibidos + ITENS_POR_PAGINA);
   proximas.forEach((receita) => gradeReceitas.appendChild(criarCard(receita)));
   itensExibidos += proximas.length;
 
-  botaoCarregarMais.hidden = itensExibidos >= receitasFiltradas.length;
+  if (botaoCarregarMais) {
+    botaoCarregarMais.hidden = itensExibidos >= receitasFiltradas.length;
+  }
 
   const vazio = receitasFiltradas.length === 0;
-  estadoVazio.hidden = !vazio;
+  if (estadoVazio) estadoVazio.hidden = !vazio;
   gradeReceitas.hidden = vazio;
 }
 
 function aplicarFiltros() {
-  const termo = campoBusca.value.trim().toLowerCase();
-  const categoria = filtroCategoria.value;
+  const termo = campoBusca ? campoBusca.value.trim().toLowerCase() : '';
+  const categoria = filtroCategoria ? filtroCategoria.value : '';
 
   receitasFiltradas = todasReceitas.filter((receita) => {
     const combinaBusca = receita.nome.toLowerCase().includes(termo);
@@ -110,16 +116,18 @@ function aplicarFiltros() {
 
   ordenarReceitas();
   itensExibidos = 0;
-  gradeReceitas.innerHTML = '';
+  if (gradeReceitas) gradeReceitas.innerHTML = '';
   mostrarMaisReceitas();
 }
 
-campoBusca.addEventListener('input', aplicarFiltros);
-filtroCategoria.addEventListener('change', aplicarFiltros);
-campoOrdenar.addEventListener('change', aplicarFiltros);
-botaoCarregarMais.addEventListener('click', mostrarMaisReceitas);
+// Listeners protegidos contra elementos ausentes no DOM
+if (campoBusca) campoBusca.addEventListener('input', aplicarFiltros);
+if (filtroCategoria) filtroCategoria.addEventListener('change', aplicarFiltros);
+if (campoOrdenar) campoOrdenar.addEventListener('change', aplicarFiltros);
+if (botaoCarregarMais) botaoCarregarMais.addEventListener('click', mostrarMaisReceitas);
 
-fetch('data/recipes.json')
+// Requisição do JSON de receitas (certifique-se de que o caminho do arquivo bate com a pasta)
+fetch('data/receitas.json')
   .then((resposta) => {
     if (!resposta.ok) {
       throw new Error(`Falha ao carregar receitas: ${resposta.status}`);
@@ -127,11 +135,11 @@ fetch('data/recipes.json')
     return resposta.json();
   })
   .then((receitas) => {
-    estadoCarregando.hidden = true;
+    if (estadoCarregando) estadoCarregando.hidden = true;
     todasReceitas = receitas;
 
     if (receitas.length === 0) {
-      estadoVazio.hidden = false;
+      if (estadoVazio) estadoVazio.hidden = false;
       return;
     }
 
@@ -140,6 +148,6 @@ fetch('data/recipes.json')
   })
   .catch((erro) => {
     console.error(erro);
-    estadoCarregando.hidden = true;
-    estadoErro.hidden = false;
+    if (estadoCarregando) estadoCarregando.hidden = true;
+    if (estadoErro) estadoErro.hidden = false;
   });
