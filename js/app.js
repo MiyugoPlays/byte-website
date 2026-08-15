@@ -6,14 +6,17 @@ if (anoAtual) {
   anoAtual.textContent = new Date().getFullYear();
 }
 
-// ==========================================
+/// ==========================================
 // 2. Alternância de tema claro/escuro
 // ==========================================
 const CHAVE_TEMA = 'byte-theme';
 const botaoTema = document.getElementById('alternar-tema');
 
 function aplicarTema(tema) {
+  // Sincroniza tanto o atributo padrão do Bootstrap (data-bs-theme) quanto o seu (data-theme)
+  document.documentElement.setAttribute('data-bs-theme', tema);
   document.documentElement.setAttribute('data-theme', tema);
+
   if (botaoTema) {
     const escuro = tema === 'dark';
     botaoTema.setAttribute('aria-pressed', String(escuro));
@@ -22,19 +25,16 @@ function aplicarTema(tema) {
   }
 }
 
+// Identifica o tema inicial (salvo no localStorage ou preferência do sistema)
 const temaSalvo = localStorage.getItem(CHAVE_TEMA);
 const prefereEscuroPeloSistema = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (temaSalvo) {
-  aplicarTema(temaSalvo);
-} else if (prefereEscuroPeloSistema && botaoTema) {
-  botaoTema.setAttribute('aria-label', 'Alternar para tema claro');
-  botaoTema.textContent = '☀️';
-}
+const temaInicial = temaSalvo || (prefereEscuroPeloSistema ? 'dark' : 'light');
+aplicarTema(temaInicial);
 
 if (botaoTema) {
   botaoTema.addEventListener('click', () => {
-    const temaAtual = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const temaAtual = document.documentElement.getAttribute('data-bs-theme') || 'light';
     const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
     aplicarTema(novoTema);
     localStorage.setItem(CHAVE_TEMA, novoTema);

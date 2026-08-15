@@ -101,12 +101,12 @@ async function iniciaReceitaCarrossel({
                     
                     <!-- Subtítulo e Meta Informações -->
                     <p class="text-body-secondary fs-6 mb-3">
-                        <span class="badge text-bg-warning text-uppercase me-1">${categoria}</span> 
+                        <span class="badge text-bg-primary text-uppercase me-1">${categoria}</span> 
                         <span class="ms-1">⏱️ ${tempo}</span>
                     </p>
 
                     <!-- Botão Responsivo de Ação -->
-                    <a class="btn btn-warning rounded-pill px-4 py-2 fw-semibold shadow-sm" href="receita.html?id=${recipe.id}">
+                    <a class="btn text-bg-primary rounded-pill px-4 py-2 fw-semibold shadow-sm" href="receita.html?id=${recipe.id}">
                         Ver detalhes
                     </a>
                 </div>

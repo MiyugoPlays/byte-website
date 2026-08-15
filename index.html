@@ -32,7 +32,7 @@
   <meta name="theme-color" content="#fafaf5">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <a class="visually-hidden-focusable" href="#conteudo-principal">Pular para o conteúdo principal</a>
 
@@ -57,7 +57,7 @@
               <a class="nav-link active fw-medium" aria-current="page" href="index.html">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium" href="receitas.html">Receitas</a>
+              <a class="nav-link fw-medium" href="listagem-receitas.html">Receitas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-medium" href="sobre.html">Sobre o Projeto</a>
@@ -76,7 +76,7 @@
   </header>
 
   <!-- Conteúdo Principal -->
-  <main id="conteudo-principal">
+  <main id="conteudo-principal" class="flex-grow-1">
 
     <!-- Hero Section -->
     <section class="hero py-4 py-lg-5">
@@ -89,7 +89,8 @@
               Bem-vindo ao Byte, seu catálogo de receitas favoritas. Aqui você encontra pratos deliciosos
               para todos os momentos.
             </p>
-            <a class="btn btn-cta rounded-pill fw-semibold px-4 py-2" href="receitas.html">Ver todas as receitas</a>
+            <a class="btn btn-cta rounded-pill fw-semibold px-4 py-2" href="listagem-receitas.html">Ver todas as
+              receitas</a>
           </div>
           <div class="col-lg-6">
             <div class="ratio ratio-4x3">
@@ -118,7 +119,7 @@
   </main>
 
   <!-- Rodapé -->
-  <footer id="rodape" class="footer-static-dark mt-5 border-top border-secondary border-opacity-25">
+  <footer id="rodape" class="footer-static-dark mt-auto border-top border-secondary border-opacity-25">
 
     <!-- Faixa de Frase em Destaque (Verde Oliva) -->
     <div class="footer-tagline text-white text-center fw-semibold py-3 px-3">
@@ -129,7 +130,7 @@
     <div class="container py-4">
       <div class="row align-items-center gy-3 text-center text-md-start">
 
-        <!-- Marca / Logo da Esquerda (Estático, sem hover e com a cor laranja) -->
+        <!-- Marca / Logo da Esquerda -->
         <div class="col-md-4">
           <div class="navbar-brand d-flex flex-column lh-1 fw-bold">
             <span class="fs-4 text-primary">Byte</span>
@@ -140,19 +141,20 @@
           </div>
         </div>
 
-        <!-- Links de Navegação (Hover Laranja + Transição) -->
+        <!-- Links de Navegação -->
         <div class="col-md-4 text-center">
           <nav aria-label="Links do rodapé">
             <ul class="list-unstyled d-inline-flex gap-3 mb-0">
               <li><a class="footer-static-link text-decoration-none fw-medium" href="index.html">Início</a></li>
-              <li><a class="footer-static-link text-decoration-none fw-medium" href="receitas.html">Receitas</a></li>
+              <li><a class="footer-static-link text-decoration-none fw-medium"
+                  href="listagem-receitas.html">Receitas</a></li>
               <li><a class="footer-static-link text-decoration-none fw-medium" href="sobre.html">Sobre o Projeto</a>
               </li>
             </ul>
           </nav>
         </div>
 
-        <!-- Redes Sociais em SVG (Hover Laranja + Transição) -->
+        <!-- Redes Sociais em SVG -->
         <div class="col-md-4 text-center text-md-end">
           <ul class="list-unstyled d-inline-flex gap-3 mb-0 fs-5" aria-label="Redes sociais">
             <li>
