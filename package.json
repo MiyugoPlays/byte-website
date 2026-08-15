@@ -1,12 +1,14 @@
 {
-  "name": " ",
+  "name": "byte-website",
   "version": "0.0.1",
-  "description": "",
+  "description": "Byte - catálogo de receitas culinárias desenvolvido com HTML5, CSS3, JavaScript e Bootstrap 5.",
   "private": true,
   "keywords": [
-    ""
+    "receitas",
+    "catalogo",
+    "bootstrap"
   ],
-  "license": "",
+  "license": "MIT",
   "author": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
