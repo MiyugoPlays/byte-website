@@ -86,6 +86,22 @@ Cada card usa os mesmos componentes e classes de tema já usados no carrossel da
 (`card recipe-card`, `btn-outline-recipe`), garantindo visual consistente entre as duas páginas, e leva
 para `receita.html?id=<id-da-receita>`.
 
+## ℹ️ Página Sobre o Projeto
+
+A página `sobre.html` reaproveita o mesmo cabeçalho, rodapé e tema claro/escuro das demais páginas (nenhum
+CSS novo foi necessário — as seções usam apenas classes já existentes, como `recipe-card` e
+`btn-outline-recipe`, e componentes nativos do Bootstrap).
+
+| O que editar | Onde editar |
+|---|---|
+| Texto de descrição do projeto | Primeira `<section>` de `sobre.html` |
+| Lista de tecnologias utilizadas | Seção "🛠️ Tecnologias Utilizadas" em `sobre.html` |
+| Integrantes da equipe (nome, foto, link) | Seção "👩‍💻 Equipe" em `sobre.html` — cada integrante é um
+`.card` com a foto de perfil do GitHub (`https://github.com/<usuário>.png`), nome e link para o perfil |
+
+O link "Sobre o Projeto" no menu de navegação já existe no cabeçalho de `index.html`, `receitas.html` e
+`receita.html` desde suas respectivas implementações; `sobre.html` reutiliza a mesma marcação de cabeçalho.
+
 ## 🛠️ Tecnologias Utilizadas
 
 O projeto será desenvolvido utilizando as seguintes tecnologias:
