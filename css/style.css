@@ -114,6 +114,8 @@ textarea {
   --bs-link-color-rgb: 232, 98, 44;
   --bs-link-hover-color: var(--color-primary-dark);
   --bs-link-hover-color-rgb: 201, 79, 31;
+  --bs-primary: var(--color-primary);
+  --bs-primary-rgb: 232, 98, 44;
 }
 
 /* Tema escuro: aplicado pela preferência do sistema ou pelo botão de alternância no cabeçalho */
@@ -261,6 +263,87 @@ body {
 .footer-copy {
   background-color: var(--color-footer-bg);
   color: #9c9c9c;
+}
+
+/* Página de detalhes da receita */
+.breadcrumb-nav a {
+  color: var(--color-text-muted);
+}
+
+.recipe-description {
+  max-width: 55ch;
+}
+
+.recipe-not-found p {
+  max-width: 48ch;
+}
+
+.recipe-meta-list li {
+  padding: .3rem 0;
+}
+
+.recipe-ingredients li {
+  position: relative;
+  padding: .35rem 0 .35rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.recipe-ingredients li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.recipe-steps {
+  counter-reset: passo;
+}
+
+.recipe-steps li {
+  counter-increment: passo;
+  position: relative;
+  padding: .25rem 0 1.25rem 2.75rem;
+  min-height: 2rem;
+}
+
+.recipe-steps li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: #fff;
+  font-weight: 700;
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chef-tip {
+  --bs-alert-bg: var(--color-bg-alt);
+  --bs-alert-border-color: var(--color-border);
+  --bs-alert-color: var(--color-text);
+  border-left: 4px solid var(--color-primary);
+}
+
+.recipe-back-btn {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--color-primary-dark);
+  --bs-btn-hover-border-color: var(--color-primary-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--color-primary-dark);
+  --bs-btn-active-border-color: var(--color-primary-dark);
 }
 
 /* Responsividade */

@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="titulo-pagina">Receita - Byte</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <meta id="meta-descricao" name="description" content="Confira ingredientes e modo de preparo desta receita no catálogo Byte.">
+
+  <meta id="og-title" property="og:title" content="Receita - Byte">
+  <meta property="og:type" content="article">
+  <meta id="og-description" property="og:description" content="Confira ingredientes e modo de preparo desta receita no catálogo Byte.">
+  <meta property="og:url" content="">
+  <meta id="og-image" property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafaf5">
+</head>
+
+<body>
+
+  <a class="visually-hidden-focusable" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho: mesma marcação usada em index.html, mantendo o item "Receitas" ativo -->
+  <header id="cabecalho" class="site-header sticky-top border-bottom">
+    <nav class="navbar navbar-expand-lg py-3" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand d-flex flex-column lh-1 fw-bold" href="index.html">
+          Byte<span class="navbar-brand-tagline fw-semibold text-uppercase text-body-secondary">Catálogo de Receitas</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center text-center gap-2 gap-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-medium" aria-current="page" href="receitas.html">Receitas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="sobre.html">Sobre o Projeto</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" id="alternar-tema" class="theme-toggle btn btn-link rounded-pill p-2 lh-1 text-decoration-none"
+                aria-pressed="false" aria-label="Alternar para tema escuro">
+                <span aria-hidden="true">🌙</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <div class="container">
+      <nav aria-label="Trilha de navegação" class="breadcrumb-nav pt-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+          <li class="breadcrumb-item"><a href="receitas.html">Receitas</a></li>
+          <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-atual">Carregando...</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Estado de carregamento, exibido enquanto o JSON é lido (removido no Pacote 3) -->
+    <p id="estado-carregando" class="container text-center text-body-secondary py-5">Carregando receita...</p>
+
+    <!-- Estado de erro: receita não encontrada ou ID inválido (Pacote 4) -->
+    <section id="estado-erro" class="container recipe-not-found text-center py-5" hidden>
+      <h1 class="fs-2 fw-bold">Receita não encontrada</h1>
+      <p class="text-body-secondary mx-auto my-3">Não encontramos a receita que você está procurando. Ela pode ter sido removida ou o link está incorreto.</p>
+      <a class="btn btn-cta rounded-pill fw-semibold px-4 py-2" href="receitas.html">Ver todas as receitas</a>
+    </section>
+
+    <!-- Conteúdo da receita, preenchido dinamicamente a partir de data/recipes.json (Pacote 3) -->
+    <article id="receita-conteudo" class="container py-4 py-lg-5" hidden>
+      <div class="row gy-4 align-items-start">
+        <div class="col-lg-6">
+          <img id="receita-imagem" class="w-100 h-auto object-fit-cover rounded-4" src="" alt="" width="700" height="460" loading="eager">
+        </div>
+        <div class="col-lg-6 text-center text-lg-start">
+          <span id="receita-categoria" class="badge rounded-pill text-bg-primary fw-semibold mb-3"></span>
+          <h1 id="receita-nome" class="fs-1 fw-bold mb-3"></h1>
+          <ul class="recipe-meta-list list-unstyled text-body-secondary mb-4 mx-auto mx-lg-0">
+            <li>⏱ Tempo de preparo: <span id="receita-tempo"></span></li>
+            <li>🍽 Porções: <span id="receita-porcoes"></span></li>
+            <li>📊 Dificuldade: <span id="receita-dificuldade"></span></li>
+          </ul>
+          <p id="receita-descricao" class="recipe-description mx-auto mx-lg-0"></p>
+        </div>
+      </div>
+
+      <div class="row gy-4 mt-5">
+        <div class="col-lg-5">
+          <h2 class="fs-4 fw-bold mb-3">🥗 Ingredientes</h2>
+          <ul id="receita-ingredientes" class="recipe-ingredients list-unstyled"></ul>
+        </div>
+        <div class="col-lg-7">
+          <h2 class="fs-4 fw-bold mb-3">👩‍🍳 Modo de preparo</h2>
+          <ol id="receita-modo-preparo" class="recipe-steps list-unstyled"></ol>
+        </div>
+      </div>
+
+      <div id="receita-dica" class="chef-tip alert mt-5" hidden>
+        <h2 class="fs-6 fw-bold mb-2">Dica do chef</h2>
+        <p id="receita-dica-texto" class="mb-0 text-body-secondary"></p>
+      </div>
+
+      <a class="btn btn-cta recipe-back-btn rounded-pill fw-semibold px-4 py-2 mt-5" href="receitas.html">← Voltar para todas as receitas</a>
+    </article>
+  </main>
+
+  <!-- Rodapé: mesma marcação usada em index.html -->
+  <footer id="rodape" class="site-footer mt-5">
+    <p class="footer-tagline text-white text-center fw-semibold py-3 mb-0">Cozinhar é transformar ingredientes em momentos inesquecíveis.</p>
+
+    <div class="container footer-main d-flex flex-wrap flex-column flex-sm-row gap-4 align-items-center justify-content-between text-center text-sm-start py-4">
+      <div class="footer-brand">
+        <span class="navbar-brand d-flex flex-column lh-1 fw-bold">Byte<span class="navbar-brand-tagline fw-semibold text-uppercase">Catálogo de Receitas</span></span>
+      </div>
+
+      <nav aria-label="Links do rodapé">
+        <ul class="footer-links list-unstyled d-flex gap-3 mb-0">
+          <li><a class="text-decoration-none" href="index.html">Início</a></li>
+          <li><a class="text-decoration-none" href="receitas.html">Receitas</a></li>
+          <li><a class="text-decoration-none" href="sobre.html">Sobre o Projeto</a></li>
+        </ul>
+      </nav>
+
+      <ul class="footer-social list-unstyled d-flex gap-3 fs-4 mb-0" aria-label="Redes sociais">
+        <li><a class="text-decoration-none" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Byte no Instagram">📷</a></li>
+        <li><a class="text-decoration-none" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Byte no Facebook">📘</a></li>
+        <li><a class="text-decoration-none" href="https://github.com/MiyugoPlays/byte-website" target="_blank" rel="noopener noreferrer" aria-label="Repositório do Byte no GitHub">💻</a></li>
+      </ul>
+    </div>
+
+    <p class="footer-copy text-center small py-3 mb-0">© <span id="ano-atual">2026</span> Byte - Catálogo de Receitas. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/receita.js"></script>
+
+</body>
+
+</html>
